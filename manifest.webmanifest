@@ -1,6 +1,6 @@
 {
   "id": "/?v2",
-  "name": "Study Hard - جدول المذاكرة",
+  "name": "Study - جدول المذاكرة",
   "short_name": "Study Hard",
   "description": "جدول مذاكرة ذكي مع مؤقتات تركيز وإحصائيات تقدّم، بيشتغل من غير نت.",
   "start_url": "./index.html",
