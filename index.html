@@ -1,0 +1,305 @@
+.shnav{display:flex;gap:6px;max-width:1100px;margin:0 auto 14px;padding:5px;border:1px solid var(--line);border-radius:16px;background:var(--card);position:sticky;top:6px;z-index:40;backdrop-filter:blur(8px)}
+.shnav button{flex:1;min-width:0;font:inherit;font-weight:800;font-size:.92rem;padding:9px 6px;border:0;border-radius:12px;background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shnav button[aria-selected="true"]{background:linear-gradient(90deg,var(--a1),var(--a2));color:var(--on)}
+[hidden]{display:none!important}
+#shStudy{--pop:#38e8d0;--acc:hsl(168 85% 30%);max-width:1100px;margin:0 auto;color:#e7e7eb}
+#shStudy .shs-card{background:linear-gradient(145deg,#0f1a35,#070d1f);border:1px solid #24365f;border-radius:25px;box-shadow:0 12px 32px rgba(0,0,0,.24);color:#e7e7eb;padding:16px;margin:0 0 14px}
+#shStudy .study-hero{position:relative;overflow:hidden;padding:20px 18px 18px;background:radial-gradient(ellipse at 18% 38%,rgba(255,94,37,.16),transparent 42%),linear-gradient(110deg,#0e1a33,#070d1f 62%)}
+#shStudy .study-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+#shStudy .study-head .lab{color:var(--pop);font-weight:800;letter-spacing:.3px;font-size:.85rem}
+#shStudy .study-head .nm{color:#f0f0f3;font-size:23px;font-weight:900;line-height:1.4}
+#shStudy .study-head .c{color:#999aa3;font-size:.85rem}
+#shStudy .focus-badge{background:#0f2336;color:var(--pop);border:1px solid #1f5a6e;border-radius:99px;padding:7px 11px;font-size:11px;font-weight:800}
+#shStudy .stopwatch-wrap{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 0 8px;min-height:245px}
+#shStudy .study-clock{position:relative;width:220px;height:220px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0;background:radial-gradient(circle,#091226 61%,#0e1830 62%);border:10px solid #24365f;box-shadow:0 0 0 1px #18191e,inset 0 0 24px rgba(56,232,208,.05)}
+#shStudy .study-clock:before{content:"";position:absolute;inset:-10px;border-radius:50%;background:conic-gradient(from -90deg,var(--pop) calc(var(--timer-progress,0)*1turn),#24365f 0);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 9px));mask:radial-gradient(farthest-side,transparent calc(100% - 10px),#000 calc(100% - 9px));pointer-events:none}
+#shStudy .stopwatch-label{font-size:12px;color:var(--pop);font-weight:900;margin-bottom:10px;text-align:center;padding:0 12px}
+#shStudy #tm{font-size:39px;line-height:1.2;font-weight:900;color:#f2f2f5;letter-spacing:1px;margin:0;font-variant-numeric:tabular-nums;direction:ltr;text-align:center;background:none;-webkit-text-fill-color:#f2f2f5}
+#shStudy .study-state{font-size:11px;color:#c7c7cf;margin-top:9px;min-height:18px;text-align:center;max-width:150px;line-height:1.5}
+#shStudy .study-progress{position:relative;width:180px;height:4px;margin:14px 0 0;background:#1e2d52;border-radius:99px;overflow:hidden}
+#shStudy .study-progress i{display:block;height:100%;width:0;background:var(--pop);transition:width .3s}
+#shStudy .shs-modes{display:flex;gap:6px;padding:4px;border-radius:99px;background:#0e1830;border:1px solid #24365f;margin:0 0 6px}
+#shStudy .shs-modes button{flex:1;min-width:0;font:inherit;font-size:13px;font-weight:800;padding:8px 6px;border:0;border-radius:99px;background:transparent;color:#aaaab4;cursor:pointer;white-space:nowrap}
+#shStudy .shs-modes button.on{background:linear-gradient(145deg,#12405a,#0b1b33);color:var(--pop);box-shadow:inset 0 0 0 1px var(--pop)}
+#shStudy .rw{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px;align-items:center}
+#shStudy label.c{color:#a8a8b1;font-size:12px}
+#shStudy input,#shStudy select{font:inherit;font-size:14px;background:#0e1830;color:#eee;border:1px solid #2b4070;border-radius:11px;padding:7px 10px;max-width:100%}
+#shStudy input[type=number]{width:74px;text-align:center}
+#shStudy .study-actions{margin-top:15px}
+#shStudy .btn{font:inherit;font-weight:700;cursor:pointer;border-radius:99px;min-height:44px;min-width:105px;padding:10px 18px;background:linear-gradient(120deg,var(--pop),#7c5cff);color:#fff;border:1px solid var(--pop);box-shadow:0 5px 18px rgba(56,232,208,.16)}
+#shStudy .btn.o{background:#0e1830;color:#d0d0d6;border:1px solid #2b4070;box-shadow:none}
+#shStudy .study-tip{background:#0e1830;border:1px dashed #24365f;color:#a8a8b1;border-radius:14px;padding:10px 12px;font-size:12px;margin-top:14px;text-align:center}
+#shStudy .shs-set{display:none;margin-top:12px;padding:12px;border:1px solid #24365f;border-radius:16px;background:#091226}
+#shStudy[data-mode="pomo"] .shs-set.pomo,#shStudy[data-mode="tm"] .shs-set.shs-tmset{display:block}
+#shStudy .shs-set .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:0}
+#shStudy .shs-set .grid2 label{display:flex;flex-direction:column;gap:5px;align-items:center;font-size:12px;color:#a8a8b1}
+#shStudy .shs-skip{display:none}
+#shStudy[data-mode="pomo"] .shs-skip{display:inline-block}
+#shStudy[data-mode="pomo"] #tscDur,#shStudy[data-mode="pomo"] #tscDurLab{display:none}
+#shStudy .s3{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:0}
+#shStudy .s3>div{background:linear-gradient(150deg,#0f1a35,#091226);border:1px solid #24365f;border-radius:17px;padding:12px 7px;color:#aeb0b9;font-size:11px;text-align:center}
+#shStudy .s3 b{display:block;color:var(--pop);font-size:19px;font-weight:900;margin-top:2px}
+#shStudy .nm2{font-size:17px;font-weight:900;color:#ededf1;margin-bottom:10px}
+#shCounter{max-width:1100px;margin:0 auto}
+#shCounter .embed-wrap{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+#shCounter .embed-frame{display:block;width:100%;height:72vh;min-height:520px;border:0;background:#fff}
+#shCounter .embed-note{font-size:12px;line-height:1.8;color:var(--muted);margin:10px 4px 0}
+#shCounter .shc-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+#shCounter .shc-bar button{font:inherit;font-weight:700;padding:7px 14px;border-radius:12px;border:1px solid var(--a1);background:transparent;color:var(--a1);cursor:pointer}  <nav class="shnav" id="shNav" role="tablist" aria-label="أقسام التطبيق">
+    <button type="button" role="tab" data-sh-view="plan" aria-selected="true">📅 الجدول</button>
+    <button type="button" role="tab" data-sh-view="study" aria-selected="false">⏱ المذاكرة</button>
+    <button type="button" role="tab" data-sh-view="counter" aria-selected="false">🎯 عداد البكالوريا</button>
+  </nav>
+  <div id="shPlan" data-sh-pane="plan">  </div>
+
+  <section id="shStudy" data-sh-pane="study" data-mode="sw" hidden>
+    <div class="shs-card study-hero">
+      <div class="study-head"><div><div class="lab">مساحة التركيز</div><div class="nm">📚 وقتك يصنع فرقًا</div><div class="c">ساعة إيقاف أو مؤقّت أو بومودورو — وقتك بيتسجل في إحصائياتك</div></div><div class="focus-badge" id="focusBadge">جاهز للإنجاز ✨</div></div>
+      <div class="shs-modes" role="tablist" aria-label="نوع العدّاد">
+        <button type="button" role="tab" data-shs-mode="sw" aria-selected="true" class="on">⏱ ساعة إيقاف</button>
+        <button type="button" role="tab" data-shs-mode="tm" aria-selected="false">⏳ مؤقّت</button>
+        <button type="button" role="tab" data-shs-mode="pomo" aria-selected="false">🍅 بومودورو</button>
+      </div>
+      <div class="stopwatch-wrap">
+        <div class="study-clock" id="studyClock"><div class="stopwatch-label" id="swLabel">⏱ ساعة الإيقاف</div><div class="big" id="tm">٠٠:٠٠:٠٠</div><div class="study-state" id="studyState">اضغط ابدأ لحساب وقت مذاكرتك</div></div>
+        <div class="study-progress"><i id="studyProgress"></i></div>
+      </div>
+      <div class="shs-set shs-tmset"><div class="rw" style="margin-top:0"><label class="c" for="shsCustomMin">مدة مخصّصة بالدقايق</label><input id="shsCustomMin" type="number" inputmode="numeric" min="1" max="600" value="25"><button type="button" class="btn o" id="shsCustomSet" style="min-width:0;min-height:36px;padding:6px 14px">تثبيت</button></div></div>
+      <div class="shs-set pomo"><div class="grid2">
+        <label>تركيز (د)<input id="shs-pf" type="number" inputmode="numeric" min="1" max="180"></label>
+        <label>استراحة قصيرة (د)<input id="shs-ps" type="number" inputmode="numeric" min="1" max="60"></label>
+        <label>استراحة طويلة (د)<input id="shs-pl" type="number" inputmode="numeric" min="1" max="90"></label>
+        <label>جلسات قبل الطويلة<input id="shs-pn" type="number" inputmode="numeric" min="2" max="10"></label>
+      </div></div>
+      <div class="rw" style="margin-top:12px"><label class="c" for="shsSubject">المادة الحالية</label><select id="shsSubject" aria-label="اختيار مادة المذاكرة"><option value="عام">مذاكرة عامة</option></select></div>
+      <div class="rw study-actions"><button class="btn" id="sb" type="button" onclick="sgo()">ابدأ ساعة الإيقاف</button><button class="btn o" type="button" onclick="srs()">تصفير</button><button class="btn o shs-skip" id="shsSkip" type="button">تخطّي ⏭</button></div>
+      <div class="study-tip" id="studyTip">💡 أبعد الموبايل عنك، وحدد هدفًا واحدًا للجلسة.</div>
+    </div>
+    <div class="shs-card"><div class="nm2">📊 مذاكرتك النهارده</div><div class="s3"><div>ذاكرت اليوم<b id="shsToday">٠ د</b></div><div>جلسات مكتملة<b id="shsSess">٠</b></div></div></div>
+  </section>
+
+  <section id="shCounter" data-sh-pane="counter" hidden>
+    <div class="shc-bar"><b>🎯 عدّاد البكالوريا</b><button type="button" id="shcReload">إعادة تحميل العدّاد</button></div>
+    <div class="embed-wrap"><iframe class="embed-frame" id="counterFrame" title="عدّاد البكالوريا" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"></iframe></div>
+    <p class="embed-note">لو العدّاد بيعتمد على حفظ محلي، استخدم نفس المتصفح كل مرة.</p>
+  </section>
+var el=0, run=false;
+function G(k,d){try{var v=localStorage.getItem('nur_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}}
+function P(k,v){try{localStorage.setItem('nur_'+k,JSON.stringify(v))}catch(e){}}
+(function(){
+'use strict';
+var q=function(s,r){return (r||document).querySelector(s)};
+var KEY='shs_study_v1';
+var S={mode:'sw',phase:'focus',base:0,t0:0,round:1,subj:'عام',
+  pomo:{f:25,s:5,l:15,n:4},tmMin:null,lastCredit:0,done:false,sessions:{}};
+try{var r=JSON.parse(localStorage.getItem(KEY));if(r&&typeof r==='object'){for(var k in r)S[k]=r[k]}}catch(e){}
+if(!S.pomo||typeof S.pomo!=='object')S.pomo={f:25,s:5,l:15,n:4};
+if(!S.sessions||typeof S.sessions!=='object')S.sessions={};
+run=!!S.t0;
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function pad(n){return String(n).padStart(2,'0')}
+function A(s){return String(s).replace(/\d/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d]})}
+function clampN(v,a,b,d){v=Math.round(Number(v));if(!isFinite(v))v=d;return Math.max(a,Math.min(b,v))}
+function today(){var x=new Date();return x.getFullYear()+'-'+pad(x.getMonth()+1)+'-'+pad(x.getDate())}
+function tscMin(){return clampN(G('tsc_min',25),1,600,25)}
+function target(){
+  if(S.mode==='pomo'){var p=S.pomo;return 60*(S.phase==='focus'?p.f:S.phase==='short'?p.s:p.l)}
+  if(S.mode==='tm'){return 60*((window.TSC&&TSC.state.min)||tscMin())}
+  return 0;
+}
+function elapsed(){return S.base+(S.t0?(Date.now()-S.t0)/1000:0)}
+function syncScene(){
+  if(!window.TSC)return;
+  if(S.mode==='pomo')TSC.state.min=target()/60;
+  else TSC.state.min=tscMin();
+}
+function creditNow(){
+  if(!S.t0||S.phase!=='focus'&&S.mode==='pomo')return;
+  var now=Date.now(),a=S.lastCredit||now;S.lastCredit=now;
+  if(now<=a)return;
+  try{
+    if(typeof anyRunning==='function'&&anyRunning())return;
+    credit(a,now,S.subj||'عام','s:study');
+    if(typeof save==='function')save();
+  }catch(e){}
+}
+var lastPaint=0;
+function paintStatsMaybe(force){
+  var n=Date.now();if(!force&&n-lastPaint<5000)return;lastPaint=n;
+  try{if(typeof paintAll==='function')paintAll();if(typeof paintStats==='function')paintStats()}catch(e){}
+}
+function fmt(sec,long){
+  var s=Math.max(0,Math.floor(sec));
+  var h=Math.floor(s/3600),m=Math.floor(s%3600/60),c=s%60;
+  return A((long||h>0)?pad(h)+':'+pad(m)+':'+pad(c):pad(m)+':'+pad(c));
+}
+var PH={focus:'🍅 تركيز',short:'☕ استراحة قصيرة',long:'🌴 استراحة طويلة'};
+function note(msg){try{var t=document.getElementById('toast'),m=document.getElementById('toastm'),o=document.getElementById('toasto');
+  if(t&&m){m.textContent=msg;if(o)o.style.display='none';t.classList.add('on');setTimeout(function(){t.classList.remove('on')},3500)}}catch(e){}}
+function render(){
+  var e=elapsed(),tg=target(),shown,ratio,label,state,badge;
+  if(S.mode==='sw'){
+    el=e;shown=fmt(e,true);var s=Math.floor(e);ratio=(s%3600)/3600;
+    label='⏱ ساعة الإيقاف';
+    state=run?'ساعة الإيقاف شغالة — وقتك بيتسجل في الإحصائيات':'اضغط ابدأ لحساب وقت مذاكرتك';
+    badge=run?'🎯 وقتك بيتحسب':'جاهز للإنجاز ✨';
+  }else{
+    var capped=Math.min(e,tg);el=capped;
+    shown=fmt(tg-capped);ratio=tg?capped/tg:0;
+    if(S.mode==='tm'){
+      label='⏳ مؤقّت';
+      state=S.done?'🎉 خلص المؤقّت — برافو عليك':run?'المؤقّت شغّال — ركّز لحد ما يخلص':'اختار المدة واضغط ابدأ';
+      badge=S.done?'✅ خلصت':run?'🎯 تركيز':'جاهز للإنجاز ✨';
+    }else{
+      label=PH[S.phase]+(S.phase==='focus'?' • '+A(S.round)+'/'+A(S.pomo.n):'');
+      state=run?(S.phase==='focus'?'ركّز — جلسة تركيز شغّالة':'ريّح شوية — الاستراحة شغّالة'):'اضغط ابدأ لأول جلسة تركيز';
+      badge=run?(S.phase==='focus'?'🎯 تركيز':'😌 استراحة'):'جاهز للإنجاز ✨';
+    }
+  }
+  var set=function(id,t){var n=document.getElementById(id);if(n&&n.textContent!==t)n.textContent=t};
+  set('tm',shown);set('swLabel',label);set('studyState',state);set('focusBadge',badge);
+  var b=document.getElementById('sb');
+  if(b)set('sb',run?'إيقاف مؤقّت':(S.mode==='sw'?'ابدأ ساعة الإيقاف':S.mode==='tm'?(S.done?'ابدأ من جديد':e>0?'كمّل':'ابدأ المؤقّت'):(e>0?'كمّل':'ابدأ')));
+  var clock=document.getElementById('studyClock');
+  if(clock){clock.style.setProperty('--timer-progress',ratio);clock.dataset.running=run?'true':'false'}
+  var pr=document.getElementById('studyProgress');if(pr)pr.style.width=(ratio*100)+'%';
+  var root=document.getElementById('shStudy');
+  if(root){root.dataset.mode=S.mode;root.dataset.phase=S.phase}
+  var tl=document.getElementById('tscDurLab');
+  if(tl)tl.textContent=S.mode==='tm'?'مدة المؤقّت':'هدف الجلسة';
+  var td=(typeof D==='object'&&D.log&&D.log[today()])?D.log[today()].t:0;
+  set('shsToday',typeof hmTxt==='function'?hmTxt(td):Math.floor(td/60)+' د');
+  set('shsSess',A(S.sessions[today()]||0));
+}
+window.sd=function(){render()};
+window.srs=function(){
+  creditNow();S.t0=0;S.base=0;S.done=false;run=false;S.lastCredit=0;
+  if(S.mode==='pomo'){S.phase='focus';S.round=1}
+  releaseWake();persist();syncScene();sd();paintStatsMaybe(true);
+};
+var WLK=null;
+function wakeOn(){try{if(!WLK&&navigator.wakeLock)navigator.wakeLock.request('screen').then(function(l){WLK=l;l.addEventListener('release',function(){WLK=null})}).catch(function(){})}catch(e){}}
+function releaseWake(){try{if(WLK){WLK.release();WLK=null}}catch(e){WLK=null}}
+function start(){
+  if(S.mode!=='sw'&&S.done){S.base=0;S.done=false}
+  try{if(typeof audio==='function')audio()}catch(e){}
+  S.t0=Date.now();S.lastCredit=S.t0;run=true;
+  try{if(typeof sfx==='function')sfx('start')}catch(e){}
+  wakeOn();persist();sd();
+}
+function pause(){
+  creditNow();
+  S.base=elapsed();S.t0=0;run=false;S.lastCredit=0;
+  try{if(typeof sfx==='function')sfx('pause')}catch(e){}
+  releaseWake();persist();sd();paintStatsMaybe(true);
+}
+window.sgo=function(){run?pause():start()};
+function bumpSession(){var k=today();S.sessions[k]=(S.sessions[k]||0)+1;
+  var ks=Object.keys(S.sessions).sort();while(ks.length>60)delete S.sessions[ks.shift()]}
+function finish(){
+  creditNow();
+  var e=Date.now();
+  try{if(typeof sfx==='function')sfx('fin');if(typeof buzz==='function')buzz([200,100,200])}catch(x){}
+  if(S.mode==='tm'){
+    S.t0=0;S.base=target();S.done=true;run=false;bumpSession();releaseWake();
+    note('🎉 خلص المؤقّت');
+  }else{
+    if(S.phase==='focus'){
+      bumpSession();
+      if(S.round>=S.pomo.n){S.phase='long';S.round=1}else{S.phase='short';S.round++}
+      note(S.phase==='long'?'🌴 كمّلت دورة كاملة — خُد استراحة طويلة':'☕ استراحة قصيرة — ريّح شوية');
+    }else{S.phase='focus';note('🍅 يلا نرجع للتركيز')}
+    S.base=0;S.t0=e;S.lastCredit=e;syncScene();
+  }
+  persist();sd();paintStatsMaybe(true);
+}
+function tick(){
+  if(!run)return;
+  var tg=target();
+  if(S.mode!=='sw'&&tg&&elapsed()>=tg){finish();return}
+  if(Date.now()-(S.lastCredit||0)>=2000){creditNow();persist()}
+  sd();paintStatsMaybe(false);
+}
+setInterval(tick,250);
+document.addEventListener('visibilitychange',function(){if(!document.hidden){tick();sd();if(run)wakeOn()}});
+function setMode(m){
+  if(m===S.mode)return;
+  if(run)pause();
+  S.mode=m;S.base=0;S.t0=0;S.done=false;run=false;S.phase='focus';S.round=1;
+  persist();syncScene();
+  [].forEach.call(document.querySelectorAll('[data-shs-mode]'),function(b){var on=b.dataset.shsMode===m;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});
+  sd();
+}
+function loadPomoInputs(){
+  var p=S.pomo;
+  [['pf','f'],['ps','s'],['pl','l'],['pn','n']].forEach(function(x){var i=document.getElementById('shs-'+x[0]);if(i)i.value=p[x[1]]});
+}
+function bind(){
+  var host=q('#shStudy');if(!host)return;
+  [].forEach.call(host.querySelectorAll('[data-shs-mode]'),function(b){
+    b.addEventListener('click',function(){setMode(b.dataset.shsMode)});
+    var on=b.dataset.shsMode===S.mode;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);
+  });
+  [['pf','f',1,180,25],['ps','s',1,60,5],['pl','l',1,90,15],['pn','n',2,10,4]].forEach(function(x){
+    var i=document.getElementById('shs-'+x[0]);if(!i)return;
+    i.addEventListener('change',function(){
+      S.pomo[x[1]]=clampN(i.value,x[2],x[3],x[4]);i.value=S.pomo[x[1]];
+      if(S.round>S.pomo.n)S.round=1;
+      persist();syncScene();sd();
+    });
+  });
+  loadPomoInputs();
+  var sub=document.getElementById('shsSubject');
+  if(sub){
+    var fill=function(){
+      var names=['عام'];
+      try{D.items.forEach(function(i){if(i.subject&&names.indexOf(i.subject)<0)names.push(i.subject)})}catch(e){}
+      if(names.indexOf(S.subj)<0)names.push(S.subj);
+      sub.innerHTML='';
+      names.forEach(function(n){var o=document.createElement('option');o.value=n;o.textContent=n==='عام'?'مذاكرة عامة':n;sub.appendChild(o)});
+      sub.value=S.subj;
+    };
+    fill();
+    sub.addEventListener('focus',fill);
+    sub.addEventListener('change',function(){creditNow();S.subj=sub.value;persist()});
+  }
+  var rs=document.getElementById('shsSkip');
+  if(rs)rs.addEventListener('click',function(){if(S.mode==='pomo'){S.base=target()-0.01;if(!run){S.t0=Date.now();run=true;S.lastCredit=S.t0}tick()}});
+  document.addEventListener('click',function(ev){
+    if(ev.target.closest&&ev.target.closest('#tscDur')){setTimeout(function(){if(S.mode==='tm'){S.done=false;persist()}sd()},0)}
+  });
+  var cm=document.getElementById('shsCustomMin'),cb=document.getElementById('shsCustomSet');
+  if(cb&&cm)cb.addEventListener('click',function(){
+    var v=clampN(cm.value,1,600,25);cm.value=v;P('tsc_min',v);S.done=false;
+    if(window.TSC){TSC.state.min=v;try{var d=document.getElementById('tscDur');if(d&&d.parentNode&&d.parentNode._markDur)d.parentNode._markDur()}catch(e){}}
+    sd();
+  });
+}
+function init(){
+  bind();
+  var d=document.getElementById('tscDur');
+  if(d&&d.previousElementSibling)d.previousElementSibling.id='tscDurLab';
+  syncScene();
+  if(run){S.lastCredit=S.lastCredit||Date.now();wakeOn()}
+  sd();
+}
+window.addEventListener('load',function(){setTimeout(init,0)});
+window.SHS={state:S,setMode:setMode,render:render};
+})();
+        <script>
+const COUNTER_B64 = 'الصق هنا النص المشفّر';
+function reloadCounter(){const f=document.getElementById('counterFrame');if(!f)return;try{const raw=atob(COUNTER_B64);const bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));f.srcdoc=new TextDecoder('utf-8').decode(bytes)}catch(e){}}
+(function(){
+  let counterLoaded=false;
+  function show(v){
+    document.querySelectorAll('[data-sh-pane]').forEach(p=>{p.hidden=p.dataset.shPane!==v});
+    document.querySelectorAll('#shNav [data-sh-view]').forEach(b=>b.setAttribute('aria-selected',b.dataset.shView===v));
+    if(v==='counter'&&!counterLoaded){counterLoaded=true;reloadCounter()}
+    if(v==='study'&&window.SHS)SHS.render();
+    scrollTo(0,0);
+  }
+  document.querySelectorAll('#shNav [data-sh-view]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.shView)));
+  const rl=document.getElementById('shcReload');if(rl)rl.addEventListener('click',reloadCounter);
+  window.shShow=show;
+})();
+    </script>
